@@ -44,16 +44,16 @@ await page.waitForSelector("Locator")
 
 Built-in Locators in Playwright
 ----------------------------------
-page.getByRole() to locate by attributes
+*page.getByRole()* to locate by attributes
 
-page.getByText() to locate by text content
+*page.getByText()* to locate by text content
 
-page.getByLabel() to locate a form control by associated label text
+*page.getByLabel()* to locate a form control by associated label text
 
-page.getByPlaceHolder() to locate an input by placeholder
+*page.getByPlaceHolder()* to locate an input by placeholder
 
-page.getByAltText() to locate an element, usually an image by its text alternative
+*page.getByAltText()* to locate an element, usually an image by its text alternative
 
-page.getByTitle() to locate an element by its text attributes
+*page.getByTitle()* to locate an element by its text attributes
 
-page.getByTestId() to locate an element by its data-testid attribute
+*page.getByTestId()* to locate an element by its data-testid attribute
