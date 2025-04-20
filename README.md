@@ -42,7 +42,7 @@ Built-in Locators in Playwright
 
 ***page.getByPlaceHolder()*** to locate an input by placeholder
 
-***page.getByAltText()* **to locate an element, usually an image by its text alternative
+***page.getByAltText()*** to locate an element, usually an image by its text alternative
 
 ***page.getByTitle()*** to locate an element by its text attributes
 
