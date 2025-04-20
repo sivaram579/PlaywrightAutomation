@@ -1,25 +1,15 @@
 Playwright execution commands
 -----------------------------
-Run all tests
---------------
-npx playwright test
+Run all tests --- **npx playwright test**
 
-Run Specfific Test
--------------------
-npx playwright test myspec.sepc.js
+Run Specfific Test --- **npx playwright test myspec.sepc.js**
 
-Run Specific test in specific browser
-------------------------------------
-npx playwright test myspec.pec.js --project=chromium
+Run Specific test in specific browser --- **npx playwright test myspec.pec.js --project=chromium**
 
-Run Specific test in specific browser in headed mode
-----------------------------------------------------
-npx playwright test HomePageTest.spec.js --project=chromium --headed
+Run Specific test in specific browser in headed mode --- **npx playwright test HomePageTest.spec.js --project=chromium --headed**
 
-Run Specific test in specific browser in headed mode in Debug mode
-------------------------------------------------------------------
-npx playwright test HomePageTest.spec.js --project=chromium --headed --debug
-
+Run Specific test in specific browser in headed mode in Debug mode --- **npx playwright test HomePageTest.spec.js --project=chromium --headed --debug
+**
 Playwright locating elements
 ---------------------------------
 Single Elements - Property, CSS, Xpath
@@ -44,16 +34,16 @@ await page.waitForSelector("Locator")
 
 Built-in Locators in Playwright
 ----------------------------------
-*page.getByRole()* to locate by attributes
+***page.getByRole()*** to locate by attributes
 
-*page.getByText()* to locate by text content
+***page.getByText()*** to locate by text content
 
-*page.getByLabel()* to locate a form control by associated label text
+***page.getByLabel()*** to locate a form control by associated label text
 
-*page.getByPlaceHolder()* to locate an input by placeholder
+***page.getByPlaceHolder()*** to locate an input by placeholder
 
-*page.getByAltText()* to locate an element, usually an image by its text alternative
+***page.getByAltText()* **to locate an element, usually an image by its text alternative
 
-*page.getByTitle()* to locate an element by its text attributes
+***page.getByTitle()*** to locate an element by its text attributes
 
-*page.getByTestId()* to locate an element by its data-testid attribute
+***page.getByTestId()*** to locate an element by its data-testid attribute
