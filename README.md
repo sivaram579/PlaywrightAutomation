@@ -25,21 +25,21 @@ Single Elements - Property, CSS, Xpath
 
 link/button
 -------------
-await page.locator('locator').click()
-await page.click('locator')
+* await page.locator('locator').click()
+* await page.click('locator')
 
 input box
 --------------
-await page.locator('locator').fill()
-await page.fill('locator','inputValue')
+* await page.locator('locator').fill()
+* await page.fill('locator','inputValue')
 
 Locate multiple web elements
 -----------------------------
-const elements = await page.$$('locator')
+* const elements = await page.$$('locator')
 
 Wait for locator
 ------------------
-await page.waitForSelector("Locator")
+* await page.waitForSelector("Locator")
 
 Built-in Locators in Playwright
 ----------------------------------
