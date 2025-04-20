@@ -8,8 +8,8 @@ Run Specific test in specific browser --- **npx playwright test myspec.pec.js --
 
 Run Specific test in specific browser in headed mode --- **npx playwright test HomePageTest.spec.js --project=chromium --headed**
 
-Run Specific test in specific browser in headed mode in Debug mode --- **npx playwright test HomePageTest.spec.js --project=chromium --headed --debug
-**
+Run Specific test in specific browser in headed mode in Debug mode --- **npx playwright test HomePageTest.spec.js --project=chromium --headed --debug**
+
 Playwright locating elements
 ---------------------------------
 Single Elements - Property, CSS, Xpath
