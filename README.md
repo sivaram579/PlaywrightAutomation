@@ -1,3 +1,12 @@
+Notes
+------------------
+Install **Node.js** and **Visual Studio Code Editor**
+Create a project folder and open the folder in VS Code Editor
+Open a new terminal window in VS Code Editor
+Run command - npm init playwright@latest
+Select the Java Script option and complete the installation
+Check the folder structure created
+
 Playwright execution commands
 -----------------------------
 Run all tests --- **npx playwright test**
