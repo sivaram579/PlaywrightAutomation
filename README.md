@@ -56,3 +56,11 @@ Built-in Locators in Playwright
 ***page.getByTitle()*** to locate an element by its text attributes
 
 ***page.getByTestId()*** to locate an element by its data-testid attribute
+
+Playwright Hooks
+----------------
+**beforeEach** - This Hook is executed before each individual test
+**afterEach** - This Hook is executed before each individual test
+
+**beforeAll** - This Hook is executed once before any of the tests start running
+**afterAll** - This Hook is executed once after all tests have been running
