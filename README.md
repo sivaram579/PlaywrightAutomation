@@ -64,3 +64,9 @@ Playwright Hooks
 
 * **beforeAll** - This Hook is executed once before any of the tests start running
 * **afterAll** - This Hook is executed once after all tests have been running
+
+Grouping tests in Playwright
+----------------------------------
+* test.describe('Group name') - Group the required tests
+* test.describe.only('Group name') - Executes only tests in partcular group
+* test.describe.skip('Group name') - Skip the tests in particular group
