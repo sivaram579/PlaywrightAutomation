@@ -67,6 +67,6 @@ Playwright Hooks
 
 Grouping tests in Playwright
 ----------------------------------
-* test.describe('Group name') - Group the required tests
-* test.describe.only('Group name') - Executes only tests in partcular group
-* test.describe.skip('Group name') - Skip the tests in particular group
+* **test.describe('Group name')** - Group the required tests
+* **test.describe.only('Group name')** - Executes only tests in partcular group
+* **test.describe.skip('Group name')** - Skip the tests in particular group
