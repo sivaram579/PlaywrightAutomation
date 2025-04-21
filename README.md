@@ -59,8 +59,8 @@ Built-in Locators in Playwright
 
 Playwright Hooks
 ----------------
-**beforeEach** - This Hook is executed before each individual test
-**afterEach** - This Hook is executed before each individual test
+* **beforeEach** - This Hook is executed before each individual test
+* **afterEach** - This Hook is executed before each individual test
 
-**beforeAll** - This Hook is executed once before any of the tests start running
-**afterAll** - This Hook is executed once after all tests have been running
+* **beforeAll** - This Hook is executed once before any of the tests start running
+* **afterAll** - This Hook is executed once after all tests have been running
