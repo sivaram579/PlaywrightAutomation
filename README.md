@@ -70,3 +70,17 @@ Grouping tests in Playwright
 * **test.describe('Group name')** - Group the required tests
 * **test.describe.only('Group name')** - Executes only tests in partcular group
 * **test.describe.skip('Group name')** - Skip the tests in particular group
+
+Tags for Playwright Tests
+--------------------------
+* We can mention tags to the playwright tests inside test description
+  test('Test5 @tag1 @tag2', async({page}) => {
+      console.log('This is my test5...')
+  })
+
+* We can run the tests based on tag names using the below command
+  **npx playwright test HomePageTest.spec.js --project=chromium --headed --grep tagname**
+
+* We can exclude the tests using tag name with the below command
+  **npx playwright test HomePageTest.spec.js --project=chromium --headed --grep tagname --grep-invert tagname**
+
