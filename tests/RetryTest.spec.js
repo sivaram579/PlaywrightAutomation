@@ -4,7 +4,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { HomePage } from '../pages/HomePage';
 import { CartPage } from '../pages/CartPage';
 
-test('Page Object Model Test', async({ page }) =>  {
+test('Retry Test', async({ page }) =>  {
     
     //Login page
     const loginPage = new LoginPage(page);
