@@ -96,3 +96,6 @@ Retries and Test Flakiness
 ---------------------------
 * Need to update **playwright.config.js** file for **retries: 1** entry - It will be applied for all tests
 * We can use command during test runs - **npx playwright test tests/RetryTest.spec.js --project=chromium --headed --retries=1**
+* Passed - No retry
+* Failed - Retry failed tests
+* Failed - Retry Passed - It will be considered as Flaky test in the report
