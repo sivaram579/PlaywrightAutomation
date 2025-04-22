@@ -91,3 +91,8 @@ Playwright can interact with the web page dialogs such as **alert, confirm, prom
 alert(), confirm(), prompt() dialogs
 -------------------------------------
 By default, dialogs are auto-dismissed by Playwright, so you don't have to handle them. However, you can register a dialog handler before the action that triggers the dialog to either **dialog.accept()** or **dialog.dismiss()** it.
+
+Retries and Test Flakiness
+---------------------------
+* Need to update **playwright.config.js** file for **retries: 1** entry - It will be applied for all tests
+* We can use command during test runs - **npx playwright test tests/RetryTest.spec.js --project=chromium --headed --retries=1**
