@@ -2,6 +2,17 @@
 import { defineConfig, devices } from '@playwright/test';
 import { on } from 'events';
 
+// // playwright.config.js
+// module.exports = {
+//   globalSetup: require.resolve('./global-setup'),
+//   globalTeardown: require.resolve('./global-teardown'),
+//   reporter: 'html',
+//   use: {
+//     baseURL: 'https://demoblaze.com',
+//   },
+// };
+
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
