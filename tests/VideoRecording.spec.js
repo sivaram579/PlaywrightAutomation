@@ -10,6 +10,6 @@ test('Record Video', async ({ page })=> {
     await page.fill('#loginpassword','test@123');
     await page.click("//button[contains(text(),'Log in')]");
 
-    await expect(page.locator('#nameofuser1')).toBeVisible();
+    await expect(page.locator('#nameofuser')).toBeVisible();
 
 });

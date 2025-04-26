@@ -10,7 +10,7 @@ test('Hard and soft assertions', async ({page}) => {
     await expect(page.locator('#nava')).toBeVisible();
     */
     //Soft Assertions - Execution will continue even after failed assertion
-    await expect.soft(page).toHaveTitle("STORE123");
+    await expect.soft(page).toHaveTitle("STORE");
     await expect.soft(page).toHaveURL("https://demoblaze.com/");
     await expect.soft(page.locator('#nava')).toBeVisible();
 

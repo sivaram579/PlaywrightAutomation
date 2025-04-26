@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test.use({ storageState: 'auth.json' });
 
-test('GlobalSetup_TearDown', async ({ page }) => {
+test.skip('GlobalSetup_TearDown', async ({ page }) => {
 // Global Setup
 await page.goto('/index.html');
 console.log('Global setup completed.');

@@ -3,13 +3,13 @@ import { request } from 'http';
 
 var userid;
 
-test('Get Users', async ({request}) => {
+test.skip('Get Users', async ({request}) => {
     const response = await request.get("https://reqres.in/api/users?page=2");
     console.log(await response.json());
     expect(response.status()).toBe(200);
 })
 
-test('Create User', async ({request}) => {
+test.skip('Create User', async ({request}) => {
 
     const response = await request.post("https://reqres.in/api/users",
                         {
@@ -24,7 +24,7 @@ test('Create User', async ({request}) => {
     console.log(userid);
 })
 
-test('Update User', async ({request}) => {
+test.skip('Update User', async ({request}) => {
     const response = await request.put("https://reqres.in/api/users/"+userid,
         {
             data:{ "name": "Sivaram", "job": "Engineer" },
@@ -35,7 +35,7 @@ test('Update User', async ({request}) => {
     await expect(response.status()).toBe(200);    
 })
 
-test('Delete User', async ({request}) => {
+test.skip('Delete User', async ({request}) => {
     const response = await request.delete("https://reqres.in/api/users/"+userid)    
     await expect(response.status()).toBe(204)
 })

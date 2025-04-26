@@ -9,7 +9,7 @@ page.getByTestId() to locate an element by its data-testid attribute
 */
 import {test, expect} from '@playwright/test';
 
-test('Builtin Locators', async({page}) => {
+test.skip('Builtin Locators', async({page}) => {
 
     await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 

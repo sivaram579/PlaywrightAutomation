@@ -27,7 +27,7 @@ import { on } from 'events';
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: false,
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -47,7 +47,7 @@ export default defineConfig({
     //Take screenshot for each test and add it to the report
     screenshot: "on",
     //Record videos of tests during execution
-    video: "retain-on-failure"
+    video: "on"
   },
 
   /* Configure projects for major browsers */
