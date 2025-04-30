@@ -1,101 +1,186 @@
-Notes
-------------------
-* Install **Node.js** and **Visual Studio Code Editor**
-* Create a project folder and open the folder in VS Code Editor
-* Open a new terminal window in VS Code Editor
-* Run command - **npm init playwright@latest**
-* Select the Java Script option and complete the installation
-* Check the folder structure created
+# Playwright Automation Project
 
-Playwright execution commands
------------------------------
-Run all tests --- **npx playwright test**
+This project contains automated tests using Playwright for web application testing.
 
-Run Specfific Test --- **npx playwright test myspec.sepc.js**
+## 🚀 Getting Started
 
-Run Specific test in specific browser --- **npx playwright test myspec.pec.js --project=chromium**
+### Prerequisites
+- Node.js (v16 or higher)
+- Visual Studio Code (recommended)
+- Git
 
-Run Specific test in specific browser in headed mode --- **npx playwright test HomePageTest.spec.js --project=chromium --headed**
+### Installation
 
-Run Specific test in specific browser in headed mode in Debug mode --- **npx playwright test HomePageTest.spec.js --project=chromium --headed --debug**
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd PlaywrightAutomation
+```
 
-Playwright locating elements
----------------------------------
-Single Elements - Property, CSS, Xpath
+2. Install dependencies:
+```bash
+npm install
+```
 
-link/button
--------------
-* await page.locator('locator').click()
-* await page.click('locator')
+3. Install Playwright browsers:
+```bash
+npx playwright install
+```
 
-input box
---------------
-* await page.locator('locator').fill()
-* await page.fill('locator','inputValue')
+## 🧪 Project Structure
 
-Locate multiple web elements
------------------------------
-* const elements = await page.$$('locator')
+```
+PlaywrightAutomation/
+├── tests/               # Test files
+├── pages/              # Page object models
+├── playwright.config.js # Playwright configuration
+├── global-setup.js     # Global setup script
+├── global-teardown.js  # Global teardown script
+├── package.json        # Project dependencies
+└── README.md           # Project documentation
+```
 
-Wait for locator
-------------------
-* await page.waitForSelector("Locator")
+## ⚙️ Configuration
 
-Built-in Locators in Playwright
-----------------------------------
-***page.getByRole()*** to locate by attributes
+The project uses `playwright.config.js` for configuration. Key features include:
+- Parallel test execution
+- HTML reporter
+- Screenshot and video capture on test failure
+- Trace collection on first retry
+- Chrome browser configuration
 
-***page.getByText()*** to locate by text content
+## 🏃‍♂️ Running Tests
 
-***page.getByLabel()*** to locate a form control by associated label text
+### Basic Commands
 
-***page.getByPlaceHolder()*** to locate an input by placeholder
+- Run all tests:
+```bash
+npx playwright test
+```
 
-***page.getByAltText()*** to locate an element, usually an image by its text alternative
+- Run specific test file:
+```bash
+npx playwright test tests/HomePageTest.spec.js
+```
 
-***page.getByTitle()*** to locate an element by its text attributes
+- Run tests in headed mode:
+```bash
+npx playwright test --headed
+```
 
-***page.getByTestId()*** to locate an element by its data-testid attribute
+- Run tests in debug mode:
+```bash
+npx playwright test --debug
+```
 
-Playwright Hooks
-----------------
-* **beforeEach** - This Hook is executed before each individual test
-* **afterEach** - This Hook is executed before each individual test
+### Browser-Specific Commands
 
-* **beforeAll** - This Hook is executed once before any of the tests start running
-* **afterAll** - This Hook is executed once after all tests have been running
+- Run tests in Chrome:
+```bash
+npx playwright test --project=chromium
+```
 
-Grouping tests in Playwright
-----------------------------------
-* **test.describe('Group name')** - Group the required tests
-* **test.describe.only('Group name')** - Executes only tests in partcular group
-* **test.describe.skip('Group name')** - Skip the tests in particular group
+- Run tests in Firefox:
+```bash
+npx playwright test --project=firefox
+```
 
-Tags for Playwright Tests
---------------------------
-* We can mention tags to the playwright tests inside test description
-  test('Test5 @tag1 @tag2', async({page}) => {
-      console.log('This is my test5...')
-  })
+- Run tests in Safari:
+```bash
+npx playwright test --project=webkit
+```
 
-* We can run the tests based on tag names using the below command
-  **npx playwright test HomePageTest.spec.js --project=chromium --headed --grep tagname**
+### Test Filtering
 
-* We can exclude the tests using tag name with the below command
-  **npx playwright test HomePageTest.spec.js --project=chromium --headed --grep tagname --grep-invert tagname**
+- Run tests with specific tags:
+```bash
+npx playwright test --grep @tag1
+```
 
-Dialogs
----------
-Playwright can interact with the web page dialogs such as **alert, confirm, prompt**
+- Exclude tests with specific tags:
+```bash
+npx playwright test --grep-invert @tag1
+```
 
-alert(), confirm(), prompt() dialogs
--------------------------------------
-By default, dialogs are auto-dismissed by Playwright, so you don't have to handle them. However, you can register a dialog handler before the action that triggers the dialog to either **dialog.accept()** or **dialog.dismiss()** it.
+## 📝 Test Writing Guidelines
 
-Retries and Test Flakiness
----------------------------
-* Need to update **playwright.config.js** file for **retries: 1** entry - It will be applied for all tests
-* We can use command during test runs - **npx playwright test tests/RetryTest.spec.js --project=chromium --headed --retries=1**
-* Passed - No retry
-* Failed - Retry failed tests
-* Failed - Retry Passed - It will be considered as Flaky test in the report
+### Locators
+
+Playwright provides multiple ways to locate elements:
+
+```javascript
+// By role
+await page.getByRole('button', { name: 'Submit' }).click();
+
+// By text
+await page.getByText('Welcome').click();
+
+// By label
+await page.getByLabel('Username').fill('user');
+
+// By placeholder
+await page.getByPlaceholder('Enter email').fill('test@example.com');
+
+// By test id
+await page.getByTestId('submit-button').click();
+```
+
+### Test Hooks
+
+```javascript
+test.beforeEach(async ({ page }) => {
+  // Runs before each test
+});
+
+test.afterEach(async ({ page }) => {
+  // Runs after each test
+});
+
+test.beforeAll(async () => {
+  // Runs once before all tests
+});
+
+test.afterAll(async () => {
+  // Runs once after all tests
+});
+```
+
+### Test Groups
+
+```javascript
+test.describe('Login Tests', () => {
+  test('should login successfully', async ({ page }) => {
+    // Test implementation
+  });
+});
+```
+
+## 📊 Test Reports
+
+After test execution, HTML reports are generated in the `playwright-report` directory. To view the report:
+
+```bash
+npx playwright show-report
+```
+
+## 🔄 Retry Mechanism
+
+Tests can be configured to retry on failure:
+- Configure in `playwright.config.js`: `retries: 1`
+- Run with specific retry count: `npx playwright test --retries=2`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the ISC License.
+
+## 📧 Contact
+
+For any queries or support, please contact the project maintainers.
